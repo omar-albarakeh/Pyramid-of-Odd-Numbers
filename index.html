@@ -4,9 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="odd-numbers.js"></script>
-    <title>Document</title>
+    <title>p-odd-numbers</title>
+    <style>
+        #poddnumbers{
+            font-size: 30px;
+        }
+    </style>
 </head>
 <body>
-    
+<div id="poddnumbers"></div> 
+<script>
+    function poddnumbers(num) {
+        let output = "";
+        for (let i=0; i<num; i++) {
+            let nbs = "";
+            for (let j=1; j<2*i + 2; j += 2) {
+                nbs += j + " "; 
+            }
+            output += nbs.trim() +"<br>";
+        }
+        return output.trim(); 
+    }
+    let x = parseInt(prompt("ur number:"));
+    let y = poddnumbers(x);
+    document.getElementById('poddnumbers').innerHTML = y;
+</script>
+
 </body>
 </html>
